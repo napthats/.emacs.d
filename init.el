@@ -71,9 +71,11 @@
 ;; C-/ は Undo に使う
 (ibus-define-common-key ?\C-/ nil)
 ;; C-\も奪われたくない
-;;(ibus-define-common-key ?\C-\s nil)
+(ibus-define-common-key ?\C-. t)
+(ibus-define-common-key ?\C-, t)
 ;; IBusの状態によってカーソル色を変化させる
 ;;(setq ibus-cursor-color '("red" "blue" "limegreen"))
 ;; C-j で半角英数モードをトグルする
 ;;(ibus-define-common-key ?\C-j t)
+
 
