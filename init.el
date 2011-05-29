@@ -54,8 +54,11 @@
                (define-key cperl-mode-map "\C-cd" 'my-perldb))))
 
 ;;ツールバー非表示
-(custom-set-variables
-'(tool-bar-mode nil nil (tool-bar)))
+;;(custom-set-variables
+;;'(tool-bar-mode nil nil (tool-bar)))
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+
 
 ;;(require 'ibus)
 ;;(add-hook 'after-init-hook 'ibus-mode-on)
