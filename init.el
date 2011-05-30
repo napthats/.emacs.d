@@ -27,11 +27,14 @@
   (eval-after-load "cperl-mode"
     '(progn (require 'dabbrev) (ad-activate 'cperl-indent-command)))
 
-;;Ctrl+hでバックスペース
-(global-set-key "\C-h" 'delete-backward-char)
-(define-key isearch-mode-map "\C-h" 'isearch-delete-char)
+;;リージョン内のperlコード実行
+(defun perl-eval (beg end)
+  "Run selected region as Perl code"
+  (interactive "r")
+  (shell-command-on-region beg end "perl"))
+(global-set-key "\C-cr" 'perl-eval)
 
-;;perldb用
+;;perldbとかコンパイルとか
 (defun my-perl-run ()
   (interactive)
   (let ((file-name (buffer-file-name (current-buffer))))
@@ -56,9 +59,13 @@
 (add-hook 'cperl-mode-hook
           '(lambda()
              (progn
-               (define-key cperl-mode-map "\C-cr" 'my-perl-run)
+               (define-key cperl-mode-map "\C-c\C-c" 'my-perl-run)
                (define-key cperl-mode-map "\C-cs" 'my-perl-check-syntax)
                (define-key cperl-mode-map "\C-cd" 'my-perldb))))
+
+;;Ctrl+hでバックスペース
+(global-set-key "\C-h" 'delete-backward-char)
+(define-key isearch-mode-map "\C-h" 'isearch-delete-char)
 
 ;;ツールバー非表示
 ;;(custom-set-variables
