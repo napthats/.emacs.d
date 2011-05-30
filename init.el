@@ -1,3 +1,6 @@
+;;クリップボード共有
+(setq x-select-enable-clipboard t)
+
 ;;elisp用load-path
 (setq load-path (cons "~/.emacs.d/elisp/" load-path))
 
@@ -8,6 +11,7 @@
 ;;(setq cperl-comment-column 40)
 (setq indent-tabs-mode nil);
 (setq cperl-close-paren-offset -4)
+(global-set-key "\M-p" 'cperl-perldoc)
 ;;(setq cperl-indent-parens-as-block t)
 (add-hook 'cperl-mode-hook
           '(lambda ()
