@@ -185,4 +185,7 @@
 ;;(setq frame-background-mode 'dark)
 
 ;;PERL5LIBセット用
-(require 'set-perl5lib)
+;;(require 'set-perl5lib)
+
+(define-key global-map [?¥] [?\\])  ;; ¥の代わりにバックスラッシュを入力する
+
