@@ -3,7 +3,6 @@
 
 ;;elisp用load-path
 (setq load-path (cons "~/.emacs.d/elisp/" load-path))
-
 ;;cperlモード
 (defalias 'perl-mode 'cperl-mode)
 (setq cperl-indent-level 4)
@@ -74,16 +73,16 @@
 (menu-bar-mode -1)
 
 
-(require 'ibus)
-(add-hook 'after-init-hook 'ibus-mode-on)
+;;(require 'ibus)
+;;(add-hook 'after-init-hook 'ibus-mode-on)
 
 ;; C-SPC は Set Mark に使う
 ;;(ibus-define-common-key ?\C-\s nil)
 ;; C-/ は Undo に使う
-(ibus-define-common-key ?\C-/ nil)
+;;(ibus-define-common-key ?\C-/ nil)
 ;; C-\も奪われたくない
-(ibus-define-common-key ?\C-. t)
-(ibus-define-common-key ?\C-, t)
+;;(ibus-define-common-key ?\C-. t)
+;;(ibus-define-common-key ?\C-, t)
 ;; IBusの状態によってカーソル色を変化させる
 ;;(setq ibus-cursor-color '("red" "blue" "limegreen"))
 ;; C-j で半角英数モードをトグルする
